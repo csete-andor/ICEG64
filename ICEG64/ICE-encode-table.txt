@@ -1,0 +1,25 @@
+ICEG64{
+    - create string salt
+    - translate it
+    - convert to integer
+    - translate it
+    - append input to salt
+    output: ICE code from integer (need salt index to decode)
+
+    format: len[==index](t@(i@(t@SALT)))+t@(i@(t@(INPUT)))
+
+    1 byte data = 21.58 byte
+
+
+}
+ICEG64Fib{
+    - generate Fibonacci numbers
+    - translate input
+    - convert translated input to integer
+    - translate integer translated input
+    - place salt to Fibonacci indexes
+    - place salt to start
+    output: ICE code from integer (need salt index and Fibonacci to decode)
+
+    format: len[__index]
+}

@@ -1,0 +1,153 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #d0cfcf;
+    }
+</style>
+<body>
+
+<h1 style="text-align: center">Help</h1>
+<h3 style="text-align: center">Offical internet help page for the ICEG64 project. Download proect <a href="https://github.com/csete-andor/ICEG64" target="_blank">here</a>! <br> Created by <a href="https://cseteandor.hu">Andor Csete</a></h3>
+
+<u>Function keywords:</u><br>
+
+<ul>
+    <li><b>builtin</b> - open built-in command menu</li>
+    <li><b>custom</b> - open custom code editor</li>
+    <li><b>help</b> - open help page in console</li>
+    <li><b>webhelp</b> - open help page in browser (This page)</li>
+</ul><br><br>
+
+<u>Built-in command keywords:</u><br>
+
+<table>
+    <tr>
+      <th>Keyword</th>
+      <th>Function</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>create_key()</td>
+      <td>Generate random binary characters. (not in use)</td>
+    </tr>
+    <tr>
+      <td>saltB</td>
+      <td>create_saltBin()</td>
+      <td>Generate index length random binary</td>
+    </tr>
+    <tr>
+        <td>saltI</td>
+        <td>create_saltInt()</td>
+        <td>Generate index length random integer</td>
+      </tr>
+      <tr>
+        <td>saltS</td>
+        <td>create_saltStr()</td>
+        <td>Generate index length random string</td>
+      </tr>
+      <tr>
+        <td>e</td>
+        <td>convertStB()</td>
+        <td>convert string to binary, insert index length salt at the beginning</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>convertSfB()</td>
+        <td>convert string from binary, cut index length salt from the beginning</td>
+      </tr>
+      <tr>
+        <td>eI</td>
+        <td>convertStI()</td>
+        <td>convert string to integer, insert index length salt at the beginning</td>
+      </tr>
+      <tr>
+        <td>dI</td>
+        <td>convertSfI()</td>
+        <td>convert string from integer, cut index length salt from the beginning</td>
+      </tr>
+      <tr>
+        <td>_NONE_</td>
+        <td>randomNum()</td>
+        <td>generate a pseudo-random number, based on time</td>
+      </tr>
+      <tr>
+        <td>encode</td>
+        <td>encode()</td>
+        <td>Convert string to integer, multiply it by 29, and translate it, than insert index length salt</td>
+      </tr>
+      <tr>
+        <td>decode</td>
+        <td>decode()</td>
+        <td>Cut index lenght salt off, divide by 29 convert to string</td>
+      </tr>
+      <tr>
+        <td>transNew</td>
+        <td>random_translate()</td>
+        <td>Create a random translate table (dictionary), with a pattern using upper/lowercase, numbers, and special charachters</td>
+      </tr>
+      <tr>
+        <td>transT</td>
+        <td>translate()</td>
+        <td>Translate string to a coded text using a constant dictionary (generated random before)</td>
+      </tr>
+      <tr>
+        <td>transF</td>
+        <td>translate_back()</td>
+        <td>Translate coded text to string using a constant dictionary (generated random before)</td>
+      </tr>
+      <tr>
+        <td>ICE</td>
+        <td>ICEG64</td>
+        <td>Translate string, convert it to integer, translate it again, insert index lenght salt</td>
+      </tr>
+      <tr>
+        <td>deICE</td>
+        <td>deICEG64()</td>
+        <td>Remove salt, transalte back, convert integer to string, translate it again</td>
+      </tr>
+      <tr>
+        <td>ICEfib</td>
+        <td>ICEG64Fib()</td>
+        <td>[NOT FINISHED YET!] translate it, convert it to integer, translate it, insert index length salt every fibonacci position</td>
+      </tr>
+      <tr>
+        <td>deICEfib</td>
+        <td>deICEG64Fib()</td>
+        <td>[NOT FINISHED YET!] Remove index lenght salt from every fibonacci position, transalate it back, convert string form integer, translate it back</td>
+      </tr>
+      <tr>
+        <td>_NONE_</td>
+        <td>generate_fibonacci()</td>
+        <td>Generate fibonacci numbers that are below X. Created for ICEG64fib</td>
+      </tr>
+      <tr>
+        <td>ICE32</td>
+        <td>ICEG32()</td>
+        <td>Lighter version of ICEG64. Translate string, than convert it to integer. Insert index length salt to the beginning.</td>
+      </tr>
+      <tr>
+        <td>deICE32</td>
+        <td>generate_fibonacci()</td>
+        <td>Decode ICEG32. Remove salt, convert integer to string, translate it back.</td>
+      </tr>
+      <tr>
+        <td>q</td>
+        <td>_NONE_</td>
+        <td>Exit built-in mode to function selecter.</td>
+      </tr>
+      
+      
+  </table>
+</body>

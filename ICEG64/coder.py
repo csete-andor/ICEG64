@@ -1,13 +1,16 @@
 import ICEdocs
+import webbrowser
 
 print("\n© 2023 Csete Andor \nAll rights reserved!\nType 'help' to open help page\n")
 
-def a():
+def builtin():
     index = 16
     xvar = ""
     while True:
         var = input("text ")
         varY = input("method ")
+        if varY == "q" or varY == "quit":
+            break
         indexYN = input("modify salt? ["+str(index)+"] (y/n) ")
         if indexYN=="y":
             index = input()
@@ -49,15 +52,12 @@ def a():
             xvar = ICEdocs.deICEG64Fib(var, int(index))
         elif varY == "transNew":
             ICEdocs.random_translate()
-        elif varY == "q":
-            print("quit")
-            break
         print(xvar)
 
 while True:
     funct = input("Function: ")
     if funct == "builtin":
-        a()
+        builtin()
     elif funct == "custom":
         coding = True
         whole_code = []
@@ -66,18 +66,30 @@ while True:
             if var == ":save":
                 xvar = ""
                 for i in whole_code:
-                    xvar = xvar + i
-                with open("customcode.py", "w") as file:
+                    xvar = xvar+ i
+                with open("ICEG64/customcode.py", "w") as file:
                     file.write("import ICEdocs as ICE\n"+xvar)
                 coding = False
-                import customcode
+                try:
+                    import customcode
+                except:
+                    print("\nThere was an error in you custom code. Please try again. \nYour code was:\n"+xvar)
             elif var == ":qa!":
                 break
             elif var != ":qa!" and var != ":save":
                 whole_code.append(var+"\n")
     elif funct == "run":
-        import customcode
+        try:
+            import customcode
+        except:
+            print("\nThere was an error in you custom code. Please try again. \nYour code was:\n"+xvar+"\n")
     elif funct == "help":
         ICEdocs.help()
+    elif funct == "webhelp":
+        webbrowser.open("https://iceg-coder.static.domains")
+    elif funct == "killall":
+        exit()
+    elif funct == "":
+        builtin()
     else:
         print('No fucntion found called "'+funct+'"')

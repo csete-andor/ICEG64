@@ -1,4 +1,4 @@
-import ICEdocs
+from ICEG64 import *
 import webbrowser
 
 print("\n© 2023 Csete Andor \nAll rights reserved!\nType 'help' to open help page\n")
@@ -15,43 +15,43 @@ def builtin():
         if indexYN=="y":
             index = input()
         if varY == "e":
-            xvar = ICEdocs.convertStB(var, int(index))
+            xvar = convertStB(var, int(index))
         elif varY == "d":
-            xvar = ICEdocs.convertSfB(var, int(index))
+            xvar = convertSfB(var, int(index))
         elif varY == "eI":
-            xvar = ICEdocs.convertStI(var, int(index))
+            xvar = convertStI(var, int(index))
         elif varY == "dI":
-            xvar = ICEdocs.convertSfI(var, int(index))
+            xvar = convertSfI(var, int(index))
         elif varY == "encode":
-            xvar = ICEdocs.encode(var, int(index))
+            xvar = encode(var, int(index))
         elif varY == "decode":
-            xvar = ICEdocs.decode(var, int(index))
+            xvar = decode(var, int(index))
         elif varY == "transT":
-            xvar = ICEdocs.translate(var, ICEdocs.translation_dict)
+            xvar = translate(var, translation_dict)
         elif varY == "transF":
-            xvar = ICEdocs.translate_back(var, ICEdocs.translation_dict)
+            xvar = translate_back(var, translation_dict)
         elif varY == "saltB":
-            xvar = ICEdocs.create_saltBin(int(index))
+            xvar = create_saltBin(int(index))
         elif varY == "saltI":
-            xvar = ICEdocs.create_saltInt(int(index))
+            xvar = create_saltInt(int(index))
         elif varY == "saltS":
-            xvar = ICEdocs.create_saltStr(int(index))
+            xvar = create_saltStr(int(index))
         elif varY == "key":
-            xvar = ICEdocs.create_key()
+            xvar = create_key()
         elif varY == "ICE":
-            xvar = ICEdocs.ICEG64(var, int(index))
+            xvar = ICEG64(var, int(index))
         elif varY == "deICE":
-            xvar = ICEdocs.deICEG64(var, int(index))
+            xvar = deICEG64(var, int(index))
         elif varY == "ICE32":
-            xvar = ICEdocs.ICEG32(var, int(index))
+            xvar = ICEG32(var, int(index))
         elif varY == "deICE32":
-            xvar = ICEdocs.deICEG32(var, int(index))
+            xvar = deICEG32(var, int(index))
         elif varY == "ICEfib":
-            xvar = ICEdocs.ICEG64Fib(var, int(index))
+            xvar = ICEG64Fib(var, int(index))
         elif varY == "deICEfib":
-            xvar = ICEdocs.deICEG64Fib(var, int(index))
+            xvar = deICEG64Fib(var, int(index))
         elif varY == "transNew":
-            ICEdocs.random_translate()
+            random_translate()
         print(xvar)
 
 while True:
@@ -68,7 +68,7 @@ while True:
                 for i in whole_code:
                     xvar = xvar+ i
                 with open("ICEG64/customcode.py", "w") as file:
-                    file.write("import ICEdocs as ICE\n"+xvar)
+                    file.write("import as ICE\n"+xvar)
                 coding = False
                 try:
                     import customcode
@@ -84,7 +84,7 @@ while True:
         except:
             print("\nThere was an error in you custom code. Please try again. \nYour code was:\n"+xvar+"\n")
     elif funct == "help":
-        ICEdocs.help()
+        help()
     elif funct == "webhelp":
         webbrowser.open("https://iceg-coder.static.domains")
     elif funct == "killall":
